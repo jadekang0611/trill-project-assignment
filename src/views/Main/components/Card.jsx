@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { makeStyles } from '@material-ui/styles';
 
@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Card = (props) => {
   const classes = useStyles();
+
   return (
     <div>
       <div>
