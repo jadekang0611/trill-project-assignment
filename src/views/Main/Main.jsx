@@ -21,11 +21,15 @@ const Main = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios('http://quotes.rest/qod.js');
-      setQuote(result.quote);
+      try {
+        const result = await axios.get('http://quotes.rest/qod');
+
+        setQuote(result.data.contents.quotes[0].quote);
+      } catch (e) {
+        setQuote(e.message);
+      }
     };
     fetchData();
-    console.log(quote);
   }, []);
   return (
     <Grid container className={classes.root}>
