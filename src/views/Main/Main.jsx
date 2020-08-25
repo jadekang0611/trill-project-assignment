@@ -26,7 +26,9 @@ const Main = () => {
 
         setQuote(result.data.contents.quotes[0].quote);
       } catch (e) {
-        setQuote(e.message);
+        setQuote(
+          'The best thing about a boolean is even if you are wrong, you are only off by a bit.'
+        );
       }
     };
     fetchData();
